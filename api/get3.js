@@ -57,21 +57,17 @@ async function handler(req) {
 }
 
 export function GET(request) {
-  Object.assign(request, { method: "GET" });
   return handler(request);
 }
 
 export function POST(request) {
-  Object.assign(request, { method: "POST" });
   return handler(request);
 }
 
 export function PUT(request) {
-  Object.assign(request, { method: "PUT" });
   return handler(request);
 }
 
 export function DELETE(request) {
-  Object.assign(request, { method: "DELETE" });
   return handler(request);
 }

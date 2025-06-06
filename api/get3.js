@@ -51,10 +51,8 @@ async function handler(req) {
       });
     }
 
-    const ttt = await globalThis
-      .fetch("https://iproxy.deno.dev/")
-      .then((res) => res.text());
-    return new Response(ttt);
+    const response = await globalThis.fetch("https://iproxy.deno.dev/");
+    return response.clone();
   } catch (e) {
     return new Response("Error: " + e.message);
   }

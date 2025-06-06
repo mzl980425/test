@@ -1,6 +1,5 @@
 async function handler(req) {
   try {
-    throw new Error(req.method + req.url);
     const reqUrl = new URL(req.url);
     const needProxy = reqUrl.pathname.startsWith("/~/");
     const url =

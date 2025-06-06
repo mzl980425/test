@@ -21,16 +21,18 @@ async function handler(req) {
 
       // get a proxy
       if (needProxy) {
-        const proxy = await fetch(
-          "http://api.dmdaili.com/dmgetip.asp?apikey=6a0bf61f&pwd=400e52b5aef21b2c9cb728f99705803c&getnum=1&httptype=0&geshi=1&fenge=1&fengefu=&Contenttype=1&operate=all&setcity=all&provin=zhejiang"
-        ).then((res) => res.text());
+        const proxy = await globalThis
+          .fetch(
+            "http://api.dmdaili.com/dmgetip.asp?apikey=6a0bf61f&pwd=400e52b5aef21b2c9cb728f99705803c&getnum=1&httptype=0&geshi=1&fenge=1&fengefu=&Contenttype=1&operate=all&setcity=all&provin=zhejiang"
+          )
+          .then((res) => res.text());
         if (typeof proxy !== "string" || !/\d+\.\d+.\d+.\d+\:\d+/.test(proxy)) {
           throw new Error("No usable proxy.");
         }
         throw new Error("Feature is not done.");
       }
 
-      const response = await fetch(url, options);
+      const response = await globalThis.fetch(url, options);
 
       // set response headers
       const resHeaders = new Headers(response.headers);

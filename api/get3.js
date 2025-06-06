@@ -1,7 +1,3 @@
-import axios from "axios";
-import { HttpProxyAgent } from "http-proxy-agent";
-import { HttpsProxyAgent } from "https-proxy-agent";
-
 export function GET(request) {
   return new Response("Hello from GET");
 }
